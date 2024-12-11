@@ -56,7 +56,7 @@ function NavBar({name}) {
         }
 
         try{
-            const response = await fetch(`https://shopping-wish-list-api.vercel.app/product/${search}`, {
+            const response = await fetch(`http://localhost:5000/product/${search}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -94,7 +94,7 @@ function NavBar({name}) {
                 <div>
                     {
                         isRotated ? (
-                            <>
+                            <div className='navBar-small-search-container'>
                                 {(location.pathname === "/home" || location.pathname === "/searchResults") && (
                                     <div className='navBar-small-search'>
                                         <input onChange={handleOnChange} className="navBar-input" type="text" placeholder="Search" />
@@ -105,7 +105,7 @@ function NavBar({name}) {
                                     <button className='navBar-button' onClick={handleAddProduct}>{(location.pathname === "/addProduct" || location.pathname === "/searchResults") ? (<>Home <IoHome /></>):(<>Add Product <CiCirclePlus /></>)}</button>
                                     <button className='navBar-button' onClick={handleLogout}>Logout</button>
                                 </div>
-                            </>
+                            </div>
                         ) : <></>
                     }
                 </div>
@@ -116,7 +116,7 @@ function NavBar({name}) {
                     <h1><span>Welcome</span> {nameTitle}</h1>
                 </div>
                 {(location.pathname === "/home" || location.pathname === "/searchResults") && (
-                    <div>
+                    <div className='navBar-input-container'>
                         <input onChange={handleOnChange} className="navBar-input" type="text" placeholder="Search" />
                         <button className="navBar-button-search" onClick={handleSearch}>Search</button>
                     </div>
