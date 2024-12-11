@@ -31,7 +31,7 @@ function Signup() {
         e.preventDefault()
 
         try{
-            const response = await fetch("http://localhost:5000/user/signup",
+            const response = await fetch("https://shopping-wish-list-api.vercel.app/user/signup",
                 {
                     method: "POST",
                     headers: {
