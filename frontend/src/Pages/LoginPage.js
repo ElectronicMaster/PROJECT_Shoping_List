@@ -38,6 +38,7 @@ function Login({setIsAuthenticated}) {
             })
 
             const result = await response.json()
+            console.log(result)
             const {status,message,JWTtoken,email,name,userID} = result
 
             if(status){

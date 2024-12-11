@@ -15,6 +15,8 @@ function NavBar({name}) {
 
     const navigate = useNavigate()
 
+    console.log("mobile",isMobile)
+
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 1240)
@@ -94,7 +96,7 @@ function NavBar({name}) {
                 <div>
                     {
                         isRotated ? (
-                            <>
+                            <div className='navBar-small-search-container'>
                                 {(location.pathname === "/home" || location.pathname === "/searchResults") && (
                                     <div className='navBar-small-search'>
                                         <input onChange={handleOnChange} className="navBar-input" type="text" placeholder="Search" />
@@ -105,7 +107,7 @@ function NavBar({name}) {
                                     <button className='navBar-button' onClick={handleAddProduct}>{(location.pathname === "/addProduct" || location.pathname === "/searchResults") ? (<>Home <IoHome /></>):(<>Add Product <CiCirclePlus /></>)}</button>
                                     <button className='navBar-button' onClick={handleLogout}>Logout</button>
                                 </div>
-                            </>
+                            </div>
                         ) : <></>
                     }
                 </div>
@@ -116,7 +118,7 @@ function NavBar({name}) {
                     <h1><span>Welcome</span> {nameTitle}</h1>
                 </div>
                 {(location.pathname === "/home" || location.pathname === "/searchResults") && (
-                    <div>
+                    <div className='navBar-input-container'>
                         <input onChange={handleOnChange} className="navBar-input" type="text" placeholder="Search" />
                         <button className="navBar-button-search" onClick={handleSearch}>Search</button>
                     </div>

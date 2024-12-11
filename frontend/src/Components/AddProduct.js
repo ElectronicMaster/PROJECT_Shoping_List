@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import NavBar from './NavBar.js'
 import { errorHandle, successHandle } from '../Utils/success_errorHangle.js'
@@ -15,6 +15,17 @@ function AddProduct() {
     link: "",
     userID: localStorage.getItem("userID")
   })
+  const [windowWidth, setWindowWidth] = useState(false)
+
+  useEffect(() => {
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const handleOnChange = (e) => {
     const {name,value} = e.target
@@ -55,7 +66,6 @@ function AddProduct() {
         body: JSON.stringify(newProductDetails)
       })
       const result = await response.json()
-      console.log(result)
       if(result.status){
         successHandle(result.message)
         navigate("/home")
@@ -73,9 +83,12 @@ function AddProduct() {
   return (
     <div>
       <NavBar name={name}/>
-      <div className='container-newProduct'>
-        <form className='newProduct-container-object' onSubmit={handleSubmit}>
-          <div className='newProduct-input-box'>
+      <div className={`container-newProduct`}>
+        <form className={`newProduct-container-object ${windowWidth?"small":""}`} onSubmit={handleSubmit}>
+          {
+            !windowWidth?<></>:<div className='newProduct-image-box'><img src={imageURL} alt="Product"/></div>
+          }
+          <div className={`newProduct-input-box`}>
             <div className='newProduct-input'>
               <label htmlFor='name' className='addProduct-label'>Name</label>
               <input name='name' onChange={handleOnChange} type='text' placeholder='Enter product name' required/>
@@ -96,12 +109,8 @@ function AddProduct() {
               <button className='newProduct-input-button' type='submit'>Add Product</button>
             </div>
           </div>
-          <div className='newProduct-image-box'>
-            <img src={imageURL} alt="Product"/>
-          </div>
         </form>
       </div>
-      {/* <ToastContainer/> */}
     </div>
   )
 }
