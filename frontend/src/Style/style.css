@@ -115,15 +115,7 @@ form div{
     flex-direction: row;
 }
 
-.navBar-input{
-    font-size: 25px;
-    padding: 10px;
-    padding-left: 20px;
-    border: 0;
-    outline: none;
-    border-radius: 35px 0 0 35px;
-    width: 100%;
-}
+
 
 .navBar-button-search{
     border: none;
