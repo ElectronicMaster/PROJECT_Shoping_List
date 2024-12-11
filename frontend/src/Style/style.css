@@ -349,6 +349,7 @@ form div{
     border-bottom: 1px solid black;
     border-radius: 10px;
     padding: 5px;
+    width: 100%;
 }
 
 .update-submit-button{
@@ -418,10 +419,28 @@ form div{
     .navBar-small-screen{
         display: flex;
         justify-content: space-between;
-        
         align-items: center;
-        
-        
+    }
+
+    .container-newProduct{
+        height: calc(100vh - 250px);
+        margin: auto;
+        width: 50%;
+    }
+
+    .newProduct-container-object.small{
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        height: auto;
+        min-width: 300px;
+        margin-top: 50px;
+    }
+    .newProduct-input-box{
+        margin-top: none;
+    }
+    .newProduct-image-box{
+        margin: none;
     }
 
     .navBar-small-button{
@@ -438,6 +457,14 @@ form div{
         transform: rotate(90deg);
     }
 
+    .newProduct-container-object{
+        background-color: aliceblue;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        height: 400px;
+        padding: 20px;
+        border-radius: 20px;
+    }
 
     .homepage-container{
         display: flex;
