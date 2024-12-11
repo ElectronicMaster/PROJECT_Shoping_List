@@ -46,7 +46,7 @@ function AddProduct() {
     }
 
     try{
-      const response = await fetch("http://localhost:5000/product",{
+      const response = await fetch("https://shopping-wish-list-api.vercel.app/product",{
         method: "POST",
         headers:{
           "Content-Type":"application/json",
