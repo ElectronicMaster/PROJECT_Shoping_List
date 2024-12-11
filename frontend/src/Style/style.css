@@ -110,6 +110,11 @@ form div{
     transition: 0.3s;
 }
 
+.navBar-input-container{
+    display: flex;
+    flex-direction: row;
+}
+
 .navBar-input{
     font-size: 25px;
     padding: 10px;
@@ -118,11 +123,6 @@ form div{
     outline: none;
     border-radius: 35px 0 0 35px;
     width: 100%;
-}
-
-.navBar-input-container{
-    display: flex;
-    flex-direction: row;
 }
 
 .navBar-button-search{
