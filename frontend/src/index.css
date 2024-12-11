@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Neucha&family=Sixtyfour+Convergence&display=swap');
+
+body{
+    height: 100vh;
+    width: 100%;
+    font-family: "neucha", sans-serif;
+    background-image: url("https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+
+}
+
+input{
+    font-family: "neucha", sans-serif;
+}
