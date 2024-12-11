@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import NavBar from './NavBar.js'
 import { errorHandle, successHandle } from '../Utils/success_errorHangle.js'
-// import { ToastContainer } from 'react-toastify'
 
 function AddProduct() {
   const navigate = useNavigate()

@@ -15,6 +15,8 @@ function NavBar({name}) {
 
     const navigate = useNavigate()
 
+    console.log("mobile",isMobile)
+
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 1240)
