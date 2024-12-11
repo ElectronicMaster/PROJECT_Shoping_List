@@ -57,7 +57,8 @@ function AddProduct() {
     }
 
     try{
-      const response = await fetch("https://shopping-wish-list-api.vercel.app/product",{
+      console.log(newProductDetails)
+      const response = await fetch("http://localhost:5000/product",{
         method: "POST",
         headers:{
           "Content-Type":"application/json",
@@ -85,9 +86,7 @@ function AddProduct() {
       <NavBar name={name}/>
       <div className={`container-newProduct`}>
         <form className={`newProduct-container-object ${windowWidth?"small":""}`} onSubmit={handleSubmit}>
-          {
-            !windowWidth?<></>:<div className='newProduct-image-box'><img src={imageURL} alt="Product"/></div>
-          }
+          <div className='newProduct-image-box'><img src={imageURL} alt="Product"/></div>
           <div className={`newProduct-input-box`}>
             <div className='newProduct-input'>
               <label htmlFor='name' className='addProduct-label'>Name</label>

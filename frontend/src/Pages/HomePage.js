@@ -18,8 +18,10 @@ function HomePage() {
       navigate("/login")
     }
 
+    console.log(userID)
+
     try{
-      const response = await fetch(`https://shopping-wish-list-api.vercel.app/product?userID=${userID}`,{
+      const response = await fetch(`http://localhost:5000/product?userID=${userID}`,{
         method: "GET",
         headers: {
           "Content-Type": "application/json",
@@ -29,6 +31,7 @@ function HomePage() {
 
       if(response.ok){
         const {status,data} = await response.json()
+        console.log(data)
         if(status){
           if(data.length === 0){
             return

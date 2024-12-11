@@ -94,6 +94,8 @@ export const addNewProduct = async(req,res) => {
             message: "Product Saved successfully",
             productDetails: product
         })
+
+        console.log(product)
     }catch(err){
         res.status(500).json({
             status: false,
