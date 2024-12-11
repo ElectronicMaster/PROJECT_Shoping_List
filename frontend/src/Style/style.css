@@ -120,6 +120,10 @@ form div{
     width: 100%;
 }
 
+.navBar-input-container{
+    display: flex;
+}
+
 .navBar-button-search{
     border: none;
     font-size: 25px;
@@ -133,16 +137,6 @@ form div{
 }
 
 .navBar-button-search:hover{
-    border: none;
-    font-size: 25px;
-    padding: 10px;
-    border-radius: 0 30px 30px 0;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    font-family: "neucha", sans-serif;
-    cursor: pointer;
-    background-color: yellow;
     box-shadow: 0 0 2px 2px black inset;
 }
 
