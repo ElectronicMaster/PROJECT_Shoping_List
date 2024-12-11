@@ -122,6 +122,7 @@ form div{
 
 .navBar-input-container{
     display: flex;
+    flex-direction: row;
 }
 
 .navBar-button-search{
@@ -129,7 +130,6 @@ form div{
     font-size: 25px;
     padding: 10px;
     border-radius: 0 30px 30px 0;
-    display: inline-flex;
     justify-content: center;
     align-items: center;
     font-family: "neucha", sans-serif;
