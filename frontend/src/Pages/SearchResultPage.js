@@ -41,7 +41,7 @@ function SearchResultPage() {
         }
 
         try{
-            const response = await fetch(`https://shopping-wish-list-api.vercel.app/${search}`, {
+            const response = await fetch(`https://shopping-wish-list-api.vercel.app/product/${search}`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
