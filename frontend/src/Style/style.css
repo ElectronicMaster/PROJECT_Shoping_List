@@ -120,11 +120,6 @@ form div{
     width: 100%;
 }
 
-.navBar-input-container{
-    display: flex;
-    flex-direction: row;
-}
-
 .navBar-button-search{
     border: none;
     font-size: 25px;
