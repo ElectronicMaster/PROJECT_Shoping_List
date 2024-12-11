@@ -35,7 +35,7 @@ function SingleProduct({data,setUserProductData}) {
         const auth = localStorage.getItem('token')
         console.log(data._id)
         try{
-            const response =await fetch(`http://localhost:5000/product/${data._id}`,{
+            const response =await fetch(`https://shopping-wish-list-api.vercel.app/product/${data._id}`,{
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
@@ -54,7 +54,7 @@ function SingleProduct({data,setUserProductData}) {
     const handleDelete = async() => {
         const auth = localStorage.getItem('token')
         try{
-            const response = await fetch(`http://localhost:5000/product/${data._id}`,{
+            const response = await fetch(`https://shopping-wish-list-api.vercel.app/product/${data._id}`,{
                 method: "DELETE",
                 headers: {
                     "Content-Type": "application/json",
